@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import VizualizarPost from './components/VizualizarPost/VisualizarPost.js'
+import axios from 'axios'
+import SwitchComponents from './components/VizualizarPost/SwitchComponents/SwitchComponents.js'
+import Carrinho from './components/VizualizarPost/Carrinho/Carrinho.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Main = styled.div`
+display: flex;
+`
+const Container = styled.div`
+display: flex;
+`
+export default class App extends Component {
+  state = {
+    activeComponent: 'loja',
+  }
+
+  appSwitcher = () => {
+    if (this.state.activeComponent === 'loja') {
+      this.setState({ activeComponent: 'carrinho' })
+    } else if ( this.state.activeComponent === 'carrinho') {
+      this.setState({ activeComponent: 'loja' })
+    }
+  }
+
+
+  render() {
+    return (
+      <Main>
+        <SwitchComponents active={this.state.activeComponent}>
+          <VizualizarPost name='loja' appSwitcher={this.appSwitcher}></VizualizarPost>
+          <Carrinho name='carrinho' appSwitcher={this.appSwitcher}></Carrinho>
+          {/* <Home name='home'></Home>
+          <Detalhes name='detalhes'></Detalhes>
+          <Cadastrar name='cadastrar'></Cadastrar> */}
+        </SwitchComponents>
+      </Main>
+    )
+  }
 }
 
-export default App;
