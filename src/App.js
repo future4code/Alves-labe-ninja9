@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import VizualizarPost from './components/VizualizarPost/VisualizarPost.js'
 import axios from 'axios'
-import SwitchComponents from './components/VizualizarPost/SwitchComponents/SwitchComponents.js'
-import Carrinho from './components/VizualizarPost/Carrinho/Carrinho.js'
+import SwitchComponents from './components/SwitchComponents/SwitchComponents.js'
+import Carrinho from './components/Carrinho/Carrinho.js'
 
 const Main = styled.div`
 display: flex;
