@@ -5,7 +5,7 @@ export default class Carrinho extends Component {
     return (
       <div>
         <h3>Carrinho</h3>
-        <button onClick={this.props.appSwitcher}>Voltar</button>
+        <button onClick={() => this.props.appSwitcher('loja')}>Voltar</button>
       </div>
       
     )
