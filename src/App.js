@@ -16,12 +16,8 @@ export default class App extends Component {
     activeComponent: 'loja',
   }
 
-  appSwitcher = () => {
-    if (this.state.activeComponent === 'loja') {
-      this.setState({ activeComponent: 'carrinho' })
-    } else if ( this.state.activeComponent === 'carrinho') {
-      this.setState({ activeComponent: 'loja' })
-    }
+  appSwitcher = (nome) => {
+    this.setState({ activeComponent: nome })
   }
 
 

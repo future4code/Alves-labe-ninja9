@@ -106,7 +106,7 @@ export default class VisualizarPost extends Component {
       }
     }).map((Card) => {
       return <Trabalho key={Card.id}>
-        <Title onClick={this.props.appSwitcher}>{Card.title}</Title>
+        <Title onClick={() => this.props.appSwitcher('carrinho')}>{Card.title}</Title>
         <p>{Card.dueDate} por {Card.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
         <button>Ver detalhes</button>
         <button>adicionar ao carrinho</button>
