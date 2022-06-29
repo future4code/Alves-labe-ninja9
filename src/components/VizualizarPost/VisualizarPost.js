@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import PostDetalhado from '../PostDetalhado/PostDetalhado'
 
 const Busca = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 80px;
+`
+const Container = styled.div`
+  text-align: center;
+  align-items: center;
 `
 
 const Card = styled.div`
@@ -21,8 +26,9 @@ const Trabalho = styled.div`
   padding: 20px 10px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px RGB(128, 126, 126);
-  text-align: center;
   width: 14vw;
+  background-color: #F2D0A7;
+  border-color: #F2D0A7;
 `
 
 const Title = styled.h3`
@@ -34,6 +40,27 @@ opacity: 0.7;
     cursor: pointer;
     opacity: 1;
 }
+`
+const Botao = styled.button`
+  background-color: #70BF63;
+  color: white;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: #70BF63;
+  margin: 5px;
+  :hover{
+    cursor: pointer;
+    background-color: white;
+    color: #70BF63;
+}
+`
+const TextoGrifado = styled.strong`
+  color: RGB(94, 93, 93);
+`
+
+const Texto = styled.p`
+  color: RGB(94, 93, 93);
 `
 
 export default class VisualizarPost extends Component {
@@ -83,6 +110,14 @@ export default class VisualizarPost extends Component {
     })
   }
 
+  trocaTelaDetalhe = (id) => {
+    this.setState({ telas: false, idPost: id })
+  }
+
+  trocaTelaLista = () => {
+    this.setState({ telas: true })
+  }
+
   render() {
 
     const novaLista = this.state.listaDePost.filter(item => {
@@ -91,6 +126,7 @@ export default class VisualizarPost extends Component {
       return this.state.valorMinimo === '' || item.price >= this.state.valorMinimo
     }).filter(item => {
       return this.state.valorMaximo === '' || item.price <= this.state.valorMaximo
+    // eslint-disable-next-line array-callback-return
     }).sort((item1, item2) => {
       switch (this.state.ordenacao) {
         case "crecente":
@@ -107,9 +143,10 @@ export default class VisualizarPost extends Component {
     }).map((Card) => {
       return <Trabalho key={Card.id}>
         <Title onClick={() => this.props.appSwitcher('carrinho')}>{Card.title}</Title>
-        <p>{Card.dueDate} por {Card.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-        <button>Ver detalhes</button>
-        <button>adicionar ao carrinho</button>
+        <Texto><TextoGrifado>Data: </TextoGrifado>{new Date(Card.dueDate).toLocaleDateString()}</Texto>
+        <Texto><TextoGrifado>Preço:</TextoGrifado> {Card.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Texto>
+        <Botao onClick={() => this.trocaTelaDetalhe(Card.id)}>Detalhe</Botao>
+        <Botao>Comprar</Botao>
       </Trabalho>
     })
 
@@ -140,7 +177,10 @@ export default class VisualizarPost extends Component {
 
       case false:
         trocaTela = <div>
-
+          <PostDetalhado
+            VisualizarInfo={this.state.idPost}
+            trocarTelaLista={this.trocaTelaLista}
+          />
         </div>
         break;
 
@@ -149,9 +189,9 @@ export default class VisualizarPost extends Component {
     }
 
     return (
-      <div>
+      <Container>
         {trocaTela}
-      </div>
+      </Container>
     )
   }
 }

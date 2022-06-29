@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import VizualizarPost from './components/VizualizarPost/VisualizarPost.js'
-import axios from 'axios'
 import SwitchComponents from './components/SwitchComponents/SwitchComponents.js'
 import Carrinho from './components/Carrinho/Carrinho.js'
 
-const Main = styled.div`
-display: flex;
-`
-const Container = styled.div`
-display: flex;
-`
 export default class App extends Component {
   state = {
     activeComponent: 'loja',
@@ -23,7 +15,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Main>
+      <div>
         <SwitchComponents active={this.state.activeComponent}>
           <VizualizarPost name='loja' appSwitcher={this.appSwitcher}></VizualizarPost>
           <Carrinho name='carrinho' appSwitcher={this.appSwitcher}></Carrinho>
@@ -31,7 +23,7 @@ export default class App extends Component {
           <Detalhes name='detalhes'></Detalhes>
           <Cadastrar name='cadastrar'></Cadastrar> */}
         </SwitchComponents>
-      </Main>
+      </div>
     )
   }
 }
