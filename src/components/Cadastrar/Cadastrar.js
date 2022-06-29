@@ -4,12 +4,32 @@ import axios from 'axios'
 
 
 const MainContainer = styled.div`
- display: flex;
+  color: #4A4A4A;
+  height: 70vh;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
-  margin: auto
+  text-align: left;
+  margin: 2% 30%;
+  h2 {
+  align-self: center;
+  font-size: 2rem;
+}
 
+`
+const Botao = styled.button`
+  background-color: #70BF63;
+  color: white;
+  width: 500px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: #70BF63;
+  :hover{
+    cursor: pointer;
+    background-color: white;
+    color: #70BF63;
+}
 `
 
 const Titulo = styled.h2`
@@ -17,6 +37,27 @@ text-align: center;
 
 `
 
+export const Checkbox = styled.div` 
+  text-align: left;
+`
+export const P = styled.p` 
+  margin-top: 2%;
+  color: #6e6e6e;
+`
+export const Pagamento = styled.div`
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 2% 0;
+    text-align: left;
+    color: #6e6e6e;
+  }
+`
+export const Form = styled.form` 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 3%;
+`
 export default class Cadastrar extends Component {
   state = {
     inputTitle: "",
@@ -57,7 +98,7 @@ export default class Cadastrar extends Component {
       paymentMethods: this.state.inputPayment,
       dueDate: this.state.inputDate
     }
-    const auth = { headers: { Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e" } }
+    const auth = { headers: { Authorization: 'e2190c39-7930-4db4-870b-bed0e5e4b88e' } }
     axios.post(url, body, auth)
       .then((response) => {
         alert(response.data.message)
@@ -76,83 +117,83 @@ export default class Cadastrar extends Component {
   render() {
     return (
       <MainContainer>
-        <Titulo>Cadastro</Titulo>
+        <Titulo>Cadastre o seu serviço</Titulo>
 
       
           <input
             required
             id="standard-required"
-            placeholder="Nome"
-           
+            placeholder="Título do Serviço*"
             value={this.state.inputTitle}
             onChange={this.handleInputTitle}
           />
        
-
+       <br/>
        
           <input
             required
             id="standard-required"
-            placeholder="Descrição"
-            defaultValue=""
+            placeholder="Descrição*"
             value={this.state.inputDescription}
             onChange={this.handleInputDescription}
           />
        
-
+       <br/>
         
           <input
             required
             id="standard-required"
-            placeholder="Valor R$"          
+            placeholder="Valor*"          
             value={this.state.inputPrice}
             onChange={this.handleInputPrice}
           />
         
 
-        <div>
-          <Titulo>Formas de Pagamento</Titulo>
+        <Pagamento>
+          <p>Formas de Pagamento</p>
 
-          <form value={this.state.inputPayment} onChange={this.handleInputPayment}>
+          <Form value={this.state.inputPayment} onChange={this.handleInputPayment}>
+              <Checkbox>
               <input
                 type="checkbox"
                 id="Pix"
                 name="Pix"
                 value="Pix"
               />
-              <label for="Pix"> Pix</label>
-
+              <label> Pix</label>
+              </Checkbox>
+              <Checkbox>
               <input
                 type="checkbox"
                 id="cartaocredito"
                 name="Cartão de Crédito"
                 value="Cartão de Crédito"
               />
-              <label for="cartaocredito"> Cartão de Crédito</label>
-
-            
+              <label> Cartão de Crédito</label>
+              </Checkbox>
+              <Checkbox>
               <input
                 type="checkbox"
                 id="cartaodebito"
                 name="Cartão de Débito"
                 value="Cartão de Débito"
               />
-              <label for="cartaodebito"> Cartão de Débito</label>
-            
-
-            
+              <label> Cartão de Débito</label>
+              </Checkbox>
+              
+              <Checkbox>
               <input
                 type="checkbox"
                 id="boleto"
                 name="Boleto"
                 value="Boleto"
               />
-              <label for="boleto"> Boleto</label>
-            
+              <label> Boleto</label>
+              </Checkbox>
 
-          </form>
+          </Form>
           
-        </div>
+        </Pagamento>
 
         
           <p>Estou disponível para esse serviço até:</p>
@@ -160,14 +201,20 @@ export default class Cadastrar extends Component {
             id="date"
             label="Escolha um a data"
             type="date"
-            defaultValue={Date.now()}
             value={this.state.inputDate}
             onChange={this.handleInputDate}
           />
         
-
-        <button onClick={this.createJob}>Cadastrar</button>
-
+        <br/>
+        <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `0 1.08755rem 1.45rem`,
+        }}
+        >
+        <Botao onClick={this.createJob}>Cadastrar</Botao>
+        </div>
       </MainContainer>
     )
   }
