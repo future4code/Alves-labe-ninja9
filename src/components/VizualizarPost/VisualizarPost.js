@@ -146,7 +146,8 @@ export default class VisualizarPost extends Component {
         <Texto><TextoGrifado>Data: </TextoGrifado>{new Date(Card.dueDate).toLocaleDateString()}</Texto>
         <Texto><TextoGrifado>Preço:</TextoGrifado> {Card.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Texto>
         <Botao onClick={() => this.trocaTelaDetalhe(Card.id)}>Detalhe</Botao>
-        <Botao>Comprar</Botao>
+        <Botao onClick={() => this.props.addService(Card.title, Card.dueDate, Card.price)}>Comprar</Botao>
+        
       </Trabalho>
     })
 

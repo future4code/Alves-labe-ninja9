@@ -167,6 +167,7 @@ export default class Cadastrar extends Component {
         
 
         <button onClick={this.createJob}>Cadastrar</button>
+        <button onClick={() => this.props.appSwitcher('loja')}>Voltar</button>
 
       </MainContainer>
     )
