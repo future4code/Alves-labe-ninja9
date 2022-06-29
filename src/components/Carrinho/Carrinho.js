@@ -26,12 +26,17 @@ const Botao = styled.button`
   border-radius: 10px;
   border-color: #70BF63;
   margin: 5px;
+  font-weight: bold;
   :hover{
     cursor: pointer;
     background-color: white;
     color: #70BF63;
 }
+`
 
+const Title2 = styled.h2`
+font-size: 2rem;
+color: #4A4A4A;
 `
 const Trabalho = styled.div`
   margin: 30px;
@@ -43,29 +48,37 @@ const Trabalho = styled.div`
   background-color: #F2D0A7;
   border-color: #F2D0A7;
 `
+const Container = styled.div`
+display: grid;
+grid-template-columns: auto auto auto auto;
+`
+
+const Main = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
 
 export default class Carrinho extends Component {
   render() {
     const novaLista = this.props.carItems.map(item => {
-    
       return <Trabalho key={item.id}>
-        <p>{item.quantidade}</p>
+        <p>{item.quantidade}x</p>
         <Title>{item.nome}</Title>
         <Texto><TextoGrifado>Data: </TextoGrifado>{new Date(item.data).toLocaleDateString()}</Texto>
         <Texto><TextoGrifado>Preço:</TextoGrifado> {item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Texto>
       </Trabalho>
- 
     })
 
     return (
-      <div>
-        <h3>Carrinho</h3>
-       {novaLista}
-       
-        <button onClick={() => this.props.appSwitcher('loja')}>Voltar</button>
-      
-      </div>
-      
+      <Main>
+        <Title2>Carrinho</Title2>
+        <Container>
+          {novaLista}
+        </Container>
+        <Botao onClick={() => this.props.appSwitcher('loja')}>Voltar</Botao>
+      </Main>
+
     )
   }
 }

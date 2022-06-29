@@ -1,27 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-import Casinha from '../../Imagem/Home.png'
-import Logo from '../../Imagem/labeninjas2.png'
-import Carrinho from '../../Imagem/Carrinho.png'
 import Facebook from '../../Imagem/Facebook.png'
 import Twitter from '../../Imagem/Twitter.png'
 import Instagram from '../../Imagem/Instagram.png'
 
-const Header = styled.div`
-  background-color: #70BF63;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`
-const ImagemCab = styled.img`
-  width: 2%;
-  margin: 10px 0;
-`
-
-const ImagemLogo = styled.img`
-  width: 4%;
-`
 const Footer = styled.div`
   background-color: #8A93A6;
   display: flex;
@@ -151,15 +134,8 @@ export default class Cadastrar extends Component {
   render() {
     return (
       <div>
-        <Header>
-          <ImagemCab src={Casinha}></ImagemCab>
-          <ImagemLogo src={Logo}></ImagemLogo>
-          <ImagemCab src={Carrinho}></ImagemCab>
-        </Header>
-      <MainContainer>
-        <Titulo>Cadastre o seu serviço</Titulo>
-
-      
+        <MainContainer>
+          <Titulo>Cadastre o seu serviço</Titulo>
           <input
             required
             id="standard-required"
@@ -167,9 +143,7 @@ export default class Cadastrar extends Component {
             value={this.state.inputTitle}
             onChange={this.handleInputTitle}
           />
-       
-       <br/>
-       
+          <br />
           <input
             required
             id="standard-required"
@@ -177,65 +151,55 @@ export default class Cadastrar extends Component {
             value={this.state.inputDescription}
             onChange={this.handleInputDescription}
           />
-       
-       <br/>
-        
+          <br />
           <input
             required
             id="standard-required"
-            placeholder="Valor*"          
+            placeholder="Valor*"
             value={this.state.inputPrice}
             onChange={this.handleInputPrice}
           />
-        
-
-        <Pagamento>
-          <p>Formas de Pagamento</p>
-
-          <Form value={this.state.inputPayment} onChange={this.handleInputPayment}>
+          <Pagamento>
+            <p>Formas de Pagamento</p>
+            <Form value={this.state.inputPayment} onChange={this.handleInputPayment}>
               <Checkbox>
-              <input
-                type="checkbox"
-                id="Pix"
-                name="Pix"
-                value="Pix"
-              />
-              <label> Pix</label>
+                <input
+                  type="checkbox"
+                  id="Pix"
+                  name="Pix"
+                  value="Pix"
+                />
+                <label> Pix</label>
               </Checkbox>
               <Checkbox>
-              <input
-                type="checkbox"
-                id="cartaocredito"
-                name="Cartão de Crédito"
-                value="Cartão de Crédito"
-              />
-              <label> Cartão de Crédito</label>
+                <input
+                  type="checkbox"
+                  id="cartaocredito"
+                  name="Cartão de Crédito"
+                  value="Cartão de Crédito"
+                />
+                <label> Cartão de Crédito</label>
               </Checkbox>
               <Checkbox>
-              <input
-                type="checkbox"
-                id="cartaodebito"
-                name="Cartão de Débito"
-                value="Cartão de Débito"
-              />
-              <label> Cartão de Débito</label>
+                <input
+                  type="checkbox"
+                  id="cartaodebito"
+                  name="Cartão de Débito"
+                  value="Cartão de Débito"
+                />
+                <label> Cartão de Débito</label>
               </Checkbox>
-              
               <Checkbox>
-              <input
-                type="checkbox"
-                id="boleto"
-                name="Boleto"
-                value="Boleto"
-              />
-              <label> Boleto</label>
+                <input
+                  type="checkbox"
+                  id="boleto"
+                  name="Boleto"
+                  value="Boleto"
+                />
+                <label> Boleto</label>
               </Checkbox>
-
-          </Form>
-          
-        </Pagamento>
-
-        
+            </Form>
+          </Pagamento>
           <p>Estou disponível para esse serviço até:</p>
           <input
             id="date"
@@ -244,19 +208,18 @@ export default class Cadastrar extends Component {
             value={this.state.inputDate}
             onChange={this.handleInputDate}
           />
-        
-        <br/>
-        <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.08755rem 1.45rem`,
-        }}
-        >
-        <Botao onClick={this.createJob}>Cadastrar</Botao>
-        </div>
-      </MainContainer>
-      <Footer>
+          <br />
+          <div
+            style={{
+              margin: `0 auto`,
+              maxWidth: 960,
+              padding: `0 1.08755rem 1.45rem`,
+            }}
+          >
+            <Botao onClick={this.createJob}>Cadastrar</Botao>
+          </div>
+        </MainContainer>
+        <Footer>
           <p>Copyright © 2022 LabeNinja.<br /> Todos os direitos reservados.</p>
           <ImagemFundo src={Facebook}></ImagemFundo>
           <ImagemFundo src={Twitter}></ImagemFundo>

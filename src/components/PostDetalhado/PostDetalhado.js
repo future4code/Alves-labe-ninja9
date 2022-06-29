@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import Casinha from '../../Imagem/Home.png'
-import Logo from '../../Imagem/labeninjas2.png'
-import Carrinho from '../../Imagem/Carrinho.png'
 import Facebook from '../../Imagem/Facebook.png'
 import Twitter from '../../Imagem/Twitter.png'
 import Instagram from '../../Imagem/Instagram.png'
@@ -51,21 +48,6 @@ const Botao = styled.button`
 const BotaoAutomatico = styled.button`
   opacity: 0;
 `
-
-const Header = styled.div`
-  background-color: #70BF63;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`
-const ImagemCab = styled.img`
-  width: 2%;
-  margin: 10px 0;
-`
-
-const ImagemLogo = styled.img`
-  width: 4%;
-`
 const Footer = styled.div`
   background-color: #8A93A6;
   display: flex;
@@ -99,15 +81,11 @@ export default class PostDetalhado extends Component {
     }).then(response => {
       let novaLista = [response.data]
       this.setState({ detalhe: novaLista })
-
       console.log(response.data)
-
-      // console.log(listaAtualizada)
     }).catch(error => {
       console.log(error.response.data.error)
     })
   }
-
 
   render() {
 
@@ -126,25 +104,16 @@ export default class PostDetalhado extends Component {
 
     return (
       <div>
-
-        <Header>
-          <ImagemCab src={Casinha}></ImagemCab>
-          <ImagemLogo src={Logo}></ImagemLogo>
-          <ImagemCab src={Carrinho}></ImagemCab>
-        </Header>
-
         <Main>
           {listaDetalhada}
           <BotaoAutomatico onClick={this.getJobById(this.props.VisualizarInfo)}>Detalhe</BotaoAutomatico>
         </Main>
-
         <Footer>
           <p>Copyright © 2022 LabeNinja.<br /> Todos os direitos reservados.</p>
           <ImagemFundo src={Facebook}></ImagemFundo>
           <ImagemFundo src={Twitter}></ImagemFundo>
           <ImagemFundo src={Instagram}></ImagemFundo>
         </Footer>
-
       </div>
     )
   }
