@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import VizualizarPost from './components/VizualizarPost/VisualizarPost.js'
 import SwitchComponents from './components/SwitchComponents/SwitchComponents.js'
 import Carrinho from './components/Carrinho/Carrinho.js'
+import Cadastrar from './components/Cadastrar/Cadastrar.js'
 
 export default class App extends Component {
   state = {
-    activeComponent: 'loja',
+    activeComponent: 'cadastrar',
   }
 
   appSwitcher = (nome) => {
@@ -19,9 +20,9 @@ export default class App extends Component {
         <SwitchComponents active={this.state.activeComponent}>
           <VizualizarPost name='loja' appSwitcher={this.appSwitcher}></VizualizarPost>
           <Carrinho name='carrinho' appSwitcher={this.appSwitcher}></Carrinho>
+          <Cadastrar name='cadastrar' appSwitcher={this.appSwitcher}></Cadastrar>
           {/* <Home name='home'></Home>
-          <Detalhes name='detalhes'></Detalhes>
-          <Cadastrar name='cadastrar'></Cadastrar> */}
+          <Detalhes name='detalhes'></Detalhes> */}
         </SwitchComponents>
       </div>
     )
