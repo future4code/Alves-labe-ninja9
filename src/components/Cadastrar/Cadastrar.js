@@ -1,7 +1,41 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import Casinha from '../../Imagem/Home.png'
+import Logo from '../../Imagem/labeninjas2.png'
+import Carrinho from '../../Imagem/Carrinho.png'
+import Facebook from '../../Imagem/Facebook.png'
+import Twitter from '../../Imagem/Twitter.png'
+import Instagram from '../../Imagem/Instagram.png'
 
+const Header = styled.div`
+  background-color: #70BF63;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`
+const ImagemCab = styled.img`
+  width: 2%;
+  margin: 10px 0;
+`
+
+const ImagemLogo = styled.img`
+  width: 4%;
+`
+const Footer = styled.div`
+  background-color: #8A93A6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+`
+
+const ImagemFundo = styled.img`
+  margin: 0 10px;
+  width: 2%;
+`
 
 const MainContainer = styled.div`
   color: #4A4A4A;
@@ -116,6 +150,12 @@ export default class Cadastrar extends Component {
 
   render() {
     return (
+      <div>
+        <Header>
+          <ImagemCab src={Casinha}></ImagemCab>
+          <ImagemLogo src={Logo}></ImagemLogo>
+          <ImagemCab src={Carrinho}></ImagemCab>
+        </Header>
       <MainContainer>
         <Titulo>Cadastre o seu serviço</Titulo>
 
@@ -216,6 +256,13 @@ export default class Cadastrar extends Component {
         <Botao onClick={this.createJob}>Cadastrar</Botao>
         </div>
       </MainContainer>
+      <Footer>
+          <p>Copyright © 2022 LabeNinja.<br /> Todos os direitos reservados.</p>
+          <ImagemFundo src={Facebook}></ImagemFundo>
+          <ImagemFundo src={Twitter}></ImagemFundo>
+          <ImagemFundo src={Instagram}></ImagemFundo>
+        </Footer>
+      </div>
     )
   }
 }
