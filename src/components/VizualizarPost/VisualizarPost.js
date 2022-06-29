@@ -136,6 +136,7 @@ export default class VisualizarPost extends Component {
 
   trocaTelaLista = () => {
     this.setState({ telas: true })
+    
   }
 
   render() {
@@ -202,8 +203,8 @@ export default class VisualizarPost extends Component {
       case false:
         trocaTela = <div>
           <PostDetalhado
-            VisualizarInfo={this.state.idPost}
             trocarTelaLista={this.trocaTelaLista}
+            teste={this.state.idPost}
           />
         </div>
         break;
