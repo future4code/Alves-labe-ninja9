@@ -8,8 +8,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
-  margin: auto
-
+  margin: auto;
 `
 
 const Titulo = styled.h2`
@@ -82,8 +81,7 @@ export default class Cadastrar extends Component {
           <input
             required
             id="standard-required"
-            placeholder="Nome"
-           
+            placeholder="Nome"     
             value={this.state.inputTitle}
             onChange={this.handleInputTitle}
           />
@@ -94,7 +92,6 @@ export default class Cadastrar extends Component {
             required
             id="standard-required"
             placeholder="Descrição"
-            defaultValue=""
             value={this.state.inputDescription}
             onChange={this.handleInputDescription}
           />
@@ -120,7 +117,7 @@ export default class Cadastrar extends Component {
                 name="Pix"
                 value="Pix"
               />
-              <label for="Pix"> Pix</label>
+              <label> Pix</label>
 
               <input
                 type="checkbox"
@@ -128,7 +125,7 @@ export default class Cadastrar extends Component {
                 name="Cartão de Crédito"
                 value="Cartão de Crédito"
               />
-              <label for="cartaocredito"> Cartão de Crédito</label>
+              <label> Cartão de Crédito</label>
 
             
               <input
@@ -137,7 +134,7 @@ export default class Cadastrar extends Component {
                 name="Cartão de Débito"
                 value="Cartão de Débito"
               />
-              <label for="cartaodebito"> Cartão de Débito</label>
+              <label> Cartão de Débito</label>
             
 
             
@@ -147,7 +144,7 @@ export default class Cadastrar extends Component {
                 name="Boleto"
                 value="Boleto"
               />
-              <label for="boleto"> Boleto</label>
+              <label> Boleto</label>
             
 
           </form>
@@ -160,7 +157,6 @@ export default class Cadastrar extends Component {
             id="date"
             label="Escolha um a data"
             type="date"
-            defaultValue={Date.now()}
             value={this.state.inputDate}
             onChange={this.handleInputDate}
           />
