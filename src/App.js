@@ -16,7 +16,7 @@ list-style: none;
 
 export default class App extends Component {
   state = {
-    activeComponent: "cadastrar",
+    activeComponent: "home",
     carItems: [],
   };
 
