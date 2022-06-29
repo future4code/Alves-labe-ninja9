@@ -45,9 +45,6 @@ const Botao = styled.button`
 }
 `
 
-const BotaoAutomatico = styled.button`
-  opacity: 0;
-`
 const Footer = styled.div`
   background-color: #8A93A6;
   display: flex;
@@ -71,6 +68,11 @@ export default class PostDetalhado extends Component {
 
   state = {
     detalhe: [],
+    id: this.props.teste
+  }
+
+  componentDidMount () {
+    this.getJobById(this.state.id)
   }
 
   getJobById = (id) => {
@@ -82,9 +84,11 @@ export default class PostDetalhado extends Component {
       let novaLista = [response.data]
       this.setState({ detalhe: novaLista })
       console.log(response.data)
+      console.log(this.state.id)
     }).catch(error => {
       console.log(error.response.data.error)
     })
+
   }
 
   render() {
@@ -106,7 +110,6 @@ export default class PostDetalhado extends Component {
       <div>
         <Main>
           {listaDetalhada}
-          <BotaoAutomatico onClick={this.getJobById(this.props.VisualizarInfo)}>Detalhe</BotaoAutomatico>
         </Main>
         <Footer>
           <p>Copyright © 2022 LabeNinja.<br /> Todos os direitos reservados.</p>
