@@ -15,7 +15,7 @@ const Container = styled.div`
 
 export default class App extends Component {
   state = {
-    activeComponent: 'home',
+    activeComponent: 'loja',
   }
 
   appSwitcher = (nome) => {
