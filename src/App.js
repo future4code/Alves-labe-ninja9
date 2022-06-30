@@ -27,7 +27,7 @@ export default class App extends Component {
     const newCarItems = this.state.carItems.map((objeto) => {
       if (objeto.nome === nome) {
         console.log(objeto.quantidade)
-        return { ...objeto, quantidade: objeto.quantidade + 1 }
+        return { ...objeto, quantidade: objeto.quantidade + 1, preco: objeto.preco + preco}
       }
       return objeto
     })
