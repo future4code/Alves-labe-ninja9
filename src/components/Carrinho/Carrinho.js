@@ -67,6 +67,7 @@ export default class Carrinho extends Component {
         <Title>{item.nome}</Title>
         <Texto><TextoGrifado>Data: </TextoGrifado>{new Date(item.data).toLocaleDateString()}</Texto>
         <Texto><TextoGrifado>Preço:</TextoGrifado> {item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Texto>
+        <button onClick={() => this.props.removeService(item.nome, item.data, item.preco, item.quantidade)}>Excluir serviço</button>
       </Trabalho>
     })
 
