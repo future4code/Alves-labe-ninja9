@@ -69,7 +69,7 @@ const Texto = styled.p`
   color: RGB(94, 93, 93);
 `
 const Footer = styled.div`
-  background-color: #8A93A6;
+  background-color: #70BF63;
   display: flex;
   align-items: center;
   justify-content: center;
