@@ -25,7 +25,7 @@ Concluído
 
 ![Screenshot 1](./src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.37.56%20PM.png)
 ![Screenshot 2](./src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.09%20PM.png)
-![Screenshot 3](.src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.18%20PM.png)
-![Screenshot 4](.src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.21%20PM.png)
-![Screenshot 5](.src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.38%20PM.png)
-![Screenshot 6](.src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.48%20PM.png)
+![Screenshot 3](./src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.18%20PM.png)
+![Screenshot 4](./src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.21%20PM.png)
+![Screenshot 5](./src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.38%20PM.png)
+![Screenshot 6](./src/Imagem/screenshots/Screen%20Shot%202022-07-01%20at%204.38.48%20PM.png)
