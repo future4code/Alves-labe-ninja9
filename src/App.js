@@ -6,6 +6,7 @@ import Cadastrar from "./components/Cadastrar/Cadastrar.js";
 import Home from "./components/Home/Home.js";
 import styled from "styled-components";
 import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
 
 const Container = styled.div`
   margin: 0;
@@ -103,6 +104,7 @@ export default class App extends Component {
             <Home name="home" appSwitcher={this.appSwitcher}></Home>
           </SwitchComponents>
         </Container>
+        <Footer></Footer>
       </div>
     );
   }
