@@ -219,12 +219,6 @@ export default class Cadastrar extends Component {
             <Botao onClick={this.createJob}>Cadastrar</Botao>
           </div>
         </MainContainer>
-        <Footer>
-          <p>Copyright © 2022 LabeNinja.<br /> Todos os direitos reservados.</p>
-          <ImagemFundo src={Facebook}></ImagemFundo>
-          <ImagemFundo src={Twitter}></ImagemFundo>
-          <ImagemFundo src={Instagram}></ImagemFundo>
-        </Footer>
       </div>
     )
   }
