@@ -31,7 +31,7 @@ export default class Header extends Component {
         return (
             <Main>
                 <ImagemCab src={Casinha} onClick={() => this.props.appSwitcher('home')}></ImagemCab>
-                <ImagemLogo src={Logo}></ImagemLogo>
+                
                 <ImagemCab src={Carrinho} onClick={() => this.props.appSwitcher('carrinho')}></ImagemCab>
             </Main>
         )

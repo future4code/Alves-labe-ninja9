@@ -15,8 +15,20 @@ opacity: 0.7;
 const Texto = styled.p`
   color: RGB(94, 93, 93);
 `
+
 const TextoGrifado = styled.strong`
   color: RGB(94, 93, 93);
+`
+const BotaoDelete = styled.button`
+background-color: #70BF63;
+color: white;
+border-color: #70BF63;
+border-radius:10px;
+margin: 5px;
+:hover{
+background-color: white;
+color: #70BF63;
+}
 `
 const Botao = styled.button`
   background-color: #70BF63;
@@ -67,7 +79,7 @@ export default class Carrinho extends Component {
         <Title>{item.nome}</Title>
         <Texto><TextoGrifado>Data: </TextoGrifado>{new Date(item.data).toLocaleDateString()}</Texto>
         <Texto><TextoGrifado>Preço:</TextoGrifado> {item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Texto>
-        <button onClick={() => this.props.removeService(item.nome, item.data, item.preco, item.quantidade)}>Excluir serviço</button>
+        <BotaoDelete onClick={() => this.props.removeService(item.nome, item.data, item.preco, item.quantidade)}>Excluir serviço</BotaoDelete>
       </Trabalho>
     })
 

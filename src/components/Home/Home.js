@@ -11,13 +11,13 @@ gap: 20%;
 justify-content: center;
 `
 const ImagemLogo = styled.img`
-width: 30%;
+width: 22%;
 margin-top: 5%;
 `
 
 const Footer = styled.div`
     /* background-color: #8A93A6; */
-    background-color: #8A8A8A;
+    background-color: #70BF63;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,9 @@ const Footer = styled.div`
     bottom: 0;
     position: fixed;
 `
+const ClickSocialMedia = styled.div`
 
+`
 const ImagemFundo = styled.img`
     margin: 0 10px;
     width: 2%;
@@ -62,7 +64,8 @@ export default class Home extends Component {
                 <ImagemLogo src={BackgroundImg} />
                 <Footer>
                     <p>Copyright © 2022 LabeNinja.<br /> Todos os direitos reservados.</p>
-                    <ImagemFundo src={Facebook}></ImagemFundo>
+                    
+                  <ImagemFundo src={Facebook} to ="https://www.instagram.com/"></ImagemFundo>
                     <ImagemFundo src={Twitter}></ImagemFundo>
                     <ImagemFundo src={Instagram}></ImagemFundo>
                 </Footer>
